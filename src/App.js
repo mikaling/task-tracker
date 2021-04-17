@@ -1,10 +1,9 @@
-
+import Header from './components/Header'
 
 function App() {
   return (
     <div className='container'>
-      <h1>Hello from React</h1>
-      <h2>hi again</h2>
+      <Header title='Task Tracker'/>
     </div>
   );
 }
