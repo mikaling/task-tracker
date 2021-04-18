@@ -11,6 +11,24 @@
       "text": "Doctor's appointment",
       "day": "Mar 4th at 3:28 PM",
       "reminder": false
+    },
+    {
+      "text": "addition test",
+      "day": "Mon",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "new again",
+      "day": "tue",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "a new task!",
+      "day": "we",
+      "reminder": true,
+      "id": 6
     }
   ]
 }
