@@ -13,7 +13,7 @@ function App() {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
       setTasks(tasksFromServer)
-    }  
+    }
 
     getTasks()
   }, [])
@@ -26,7 +26,6 @@ function App() {
     return data
   }
 
-
   // Add Task
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 10000) + 1
@@ -36,7 +35,8 @@ function App() {
 
 
   // Delete Task
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:3001/tasks/${id}`, { method: 'DELETE' })
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
@@ -55,7 +55,7 @@ function App() {
       <Header
         title='Task Tracker'
         onAddButtonClick={() => setShowAddTask(!showAddTask)}
-        showAddTask = { showAddTask }
+        showAddTask={showAddTask}
       />
       {
         // Ternary shorthand for conditional formating
