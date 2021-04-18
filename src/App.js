@@ -7,26 +7,7 @@ function App() {
 
   const [showAddTask, setShowAddTask] = useState(false)
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'Grocery shopping',
-      day: 'Mar 3rd at 1:28 PM',
-      reminder: false
-    },
-    {
-      id: 2,
-      text: 'Work meeting',
-      day: 'Mar 6th at 1:08 AM',
-      reminder: true
-    },
-    {
-      id: 3,
-      text: 'Doctor\'s appointment',
-      day: 'Mar 4th at 3:28 PM',
-      reminder: false
-    },
-  ])
+  const [tasks, setTasks] = useState([])
 
 
   // Add Task
