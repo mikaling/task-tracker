@@ -15,19 +15,19 @@
     {
       "text": "addition test",
       "day": "Mon",
-      "reminder": true,
+      "reminder": false,
       "id": 4
     },
     {
       "text": "new again",
       "day": "tue",
-      "reminder": true,
+      "reminder": false,
       "id": 5
     },
     {
       "text": "a new task!",
       "day": "we",
-      "reminder": true,
+      "reminder": false,
       "id": 6
     }
   ]
