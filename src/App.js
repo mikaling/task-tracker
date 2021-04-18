@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
+import About from './components/About'
 
 function App() {
 
@@ -95,26 +97,34 @@ function App() {
 
 
   return (
-    <div className='container'>
-      <Header
-        title='Task Tracker'
-        onAddButtonClick={() => setShowAddTask(!showAddTask)}
-        showAddTask={showAddTask}
-      />
-      {
-        // Ternary shorthand for conditional formatting
-        showAddTask && <AddTask onAdd={addTask} />
-      }
-      { tasks.length > 0 ?
-        <Tasks
-          onToggle={toggleReminder}
-          tasks={tasks}
-          onDelete={deleteTask}
-        /> :
-        'No tasks available.'
-      }
-      <Footer />
-    </div>
+    <Router>
+      <div className='container'>
+        <Header
+          title='Task Tracker'
+          onAddButtonClick={() => setShowAddTask(!showAddTask)}
+          showAddTask={showAddTask}
+        />
+
+        <Route path='/' exact render={(props) => (
+          <>
+            {
+              // Ternary shorthand for conditional formatting
+              showAddTask && <AddTask onAdd={addTask} />
+            }
+            {tasks.length > 0 ?
+              <Tasks
+                onToggle={toggleReminder}
+                tasks={tasks}
+                onDelete={deleteTask}
+              /> :
+              'No tasks available.'
+            }
+          </>
+        )} />
+        <Route path='/about' component={About}/>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

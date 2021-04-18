@@ -10,7 +10,7 @@
       "id": 3,
       "text": "Doctor's appointment",
       "day": "Mar 4th at 3:28 PM",
-      "reminder": false
+      "reminder": true
     },
     {
       "text": "addition test",
@@ -27,7 +27,7 @@
     {
       "text": "a new task!",
       "day": "we",
-      "reminder": false,
+      "reminder": true,
       "id": 6
     }
   ]
