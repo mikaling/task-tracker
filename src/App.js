@@ -5,6 +5,8 @@ import AddTask from './components/AddTask'
 
 function App() {
 
+  const [showAddTask, setShowAddTask] = useState(false)
+
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -33,7 +35,7 @@ function App() {
     const newTask = { id, ...task }
     setTasks([...tasks, newTask])
   }
-  
+
 
   // Delete Task
   const deleteTask = (id) => {
@@ -52,8 +54,15 @@ function App() {
 
   return (
     <div className='container'>
-      <Header title='Task Tracker' />
-      <AddTask onAdd = { addTask }/>
+      <Header
+        title='Task Tracker'
+        onAddButtonClick={() => setShowAddTask(!showAddTask)}
+        showAddTask = { showAddTask }
+      />
+      {
+        // Ternary shorthand for conditional formating
+        showAddTask && <AddTask onAdd={addTask} />
+      }
       { tasks.length > 0 ?
         <Tasks
           onToggle={toggleReminder}
